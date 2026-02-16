@@ -24,7 +24,7 @@ A full-stack, containerized web application that uses Artificial Intelligence to
 
 ## Screenshots
 * **SmartGallery**:
-![Main Gallery](client/src/assests/Maingallery.png)
+![Main Gallery](client/src/assets/Maingallery.png)
 
 * **Search feature**:
-![Search Feature](client/src/assests/search.png)
+![Search Feature](client/src/assets/search.png)
