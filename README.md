@@ -1,16 +1,30 @@
-# React + Vite
+# AI Smart Gallery 📸
+A full-stack, containerized web application that uses Artificial Intelligence to automatically tag and organize images. Built with the MERN stack and deployed via Docker.
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+---
 
-Currently, two official plugins are available:
+## 🚀 Key Features
+* **AI-Driven Object Detection**: Integrates the **Hugging Face Inference API** to analyze uploaded images and automatically generate descriptive metadata tags (e.g., animals, furniture, electronics).
+* **MERN Stack Architecture**: Built with a **React** frontend, **Node.js/Express** backend, and **MongoDB Atlas** for persistent cloud storage.
+* **Containerized Workflow**: Fully dockerized environment for seamless deployment, ensuring the app runs identically across different operating systems.
+* **Persistent Data Bridging**: Implements **Docker Volumes** to synchronize local host-machine uploads with the containerized server environment.
+* **Glassmorphic Design**: A modern, responsive UI featuring real-time tag-based search and interactive gallery cards.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+---
 
-## React Compiler
+## 🛠️ Technical Stack
+* **AI Service**: Hugging Face Inference API (Computer Vision)
+* **Frontend**: React.js, CSS Glassmorphism
+* **Backend**: Node.js, Express.js
+* **Database**: MongoDB Atlas
+* **DevOps**: Docker
+* **Libraries**: Multer (file handling), Mongoose (ODM), Axios
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+---
 
-## Expanding the ESLint configuration
+## Screenshots
+* **SmartGallery**:
+![Main Gallery](./client/src/assests/Maingallery.png)
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+* **Search feature**:
+![Search Feature](./client/src/assests/search.png)
