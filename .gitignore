@@ -1,0 +1,14 @@
+# Dependency folders
+node_modules/
+client/node_modules/
+server/node_modules/
+uploads/
+# Secrets and Keys
+.env
+
+
+# Build folders
+client/dist/
+
+# OS files
+.DS_Store
