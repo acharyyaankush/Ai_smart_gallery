@@ -22,7 +22,10 @@ A full-stack, containerized web application that uses Artificial Intelligence to
 
 ---
 
-## Screenshots
+## 📸 Gallery Showcase
+* **Main Dashboard**:
+![Main Gallery](client/src/assets/Dashboard.png)
+
 * **SmartGallery**:
 ![Main Gallery](client/src/assets/Maingallery.png)
 
