@@ -6,6 +6,8 @@ const path = require('path');
 const Image = require('../models/Image');
 const axios = require('axios');
 
+const backendUrl = process.env.BACKEND_URL || 'http://localhost:5000';
+
 const storage = multer.diskStorage({
   // This absolute path forces the file into /app/server/uploads
   destination: path.join(__dirname, '..', 'uploads'), 
@@ -56,7 +58,7 @@ router.post('/upload', upload.single('image'), async (req, res) => {
     console.log("🏷️ Cleaned AI Tags:", aiTags);
 
     const newImage = new Image({
-      imageUrl: `http://localhost:5000/uploads/${req.file.filename}`,
+      imageUrl: `${backendUrl}/uploads/${req.file.filename}`,
       fileName: req.file.filename,
       tags: aiTags,
     });
