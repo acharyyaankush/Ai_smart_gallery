@@ -4,6 +4,8 @@ import ImageGrid from './components/ImageGrid';
 import Upload from './components/Upload';
 import './index.css';
 
+const API_URL = "https://gallery-backend-qlro.onrender.com";
+
 function App() {
   const [images, setImages] = useState([]);
   const [searchTerm, setSearchTerm] = useState("");
@@ -15,7 +17,7 @@ function App() {
 
   const fetchImages = async () => {
     try {
-      const response = await axios.get('http://localhost:5000/api/images');
+      const response = await axios.get(`${API_URL}/api/images`);
       setImages(response.data);
     } catch (error) {
       console.error('Error fetching images:', error);
@@ -32,7 +34,7 @@ function App() {
 const deleteImage = async (id) => {
   if (window.confirm("Delete this image?")) {
     try {
-      await axios.delete(`http://localhost:5000/api/images/${id}`);
+      await axios.delete(`${API_URL}/api/images/${id}`);
       
       // OPTION A: Filter the local state (Fastest)
       setImages(prevImages => prevImages.filter(img => img._id !== id));
