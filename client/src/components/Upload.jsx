@@ -1,7 +1,7 @@
 import axios from 'axios';
 import { useState } from 'react';
 
-const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:5000';
+const API_URL = "https://gallery-backend-qlro.onrender.com" || "http://localhost:5000";
 
 const Upload = ({ onUploadSuccess, setLoading }) => {
   const [file, setFile] = useState(null);
