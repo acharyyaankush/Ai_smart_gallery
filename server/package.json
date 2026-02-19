@@ -15,11 +15,13 @@
     "@google-cloud/storage": "^7.19.0",
     "@huggingface/inference": "^4.13.12",
     "axios": "^1.13.5",
+    "cloudinary": "^1.41.3",
     "cors": "^2.8.6",
     "dotenv": "^17.2.4",
     "express": "^5.2.1",
     "mime": "^4.1.0",
     "mongoose": "^9.2.1",
-    "multer": "^2.0.2"
+    "multer": "^2.0.2",
+    "multer-storage-cloudinary": "^4.0.0"
   }
 }
