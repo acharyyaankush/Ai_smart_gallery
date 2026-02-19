@@ -5,22 +5,13 @@ const fs = require('fs');
 const path = require('path');
 const Image = require('../models/Image');
 const axios = require('axios');
-const cloudinary = require('cloudinary').v2;
-const { CloudinaryStorage } = require('multer-storage-cloudinary');
 
-
-cloudinary.config({
-  cloud_name: process.env.CLOUDINARY_CLOUD_NAME,
-  api_key: process.env.CLOUDINARY_API_KEY,
-  api_secret: process.env.CLOUDINARY_API_SECRET
-});
-
-const storage = new CloudinaryStorage({
-  cloudinary: cloudinary,
-  params: {
-    folder: 'ai_smart_gallery', // Folder name in your Cloudinary dashboard
-    allowed_formats: ['jpg', 'png', 'jpeg', 'jfif'],
-  },
+const storage = multer.diskStorage({
+  // This absolute path forces the file into /app/server/uploads
+  destination: path.join(__dirname, '..', 'uploads'), 
+  filename: (req, file, cb) => {
+    cb(null, Date.now() + path.extname(file.originalname));
+  }
 });
 
 const upload = multer({ storage: storage });
@@ -129,7 +120,7 @@ router.post('/upload', upload.single('image'), async (req, res) => {
 
     // 5. Save the Cloudinary URL directly to MongoDB (Goodbye localhost!)
     const newImage = new Image({
-      imageUrl: cloudinaryUrl, 
+      imageUrl: `http://localhost:5000/uploads/${req.file.filename}`,
       fileName: req.file.filename,
       tags: aiTags,
     });

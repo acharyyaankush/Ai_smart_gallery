@@ -1,6 +1,8 @@
 import axios from 'axios';
 import { useState } from 'react';
 
+const API_URL = "https://gallery-backend-qlro.onrender.com" || "http://localhost:5000";
+
 const Upload = ({ onUploadSuccess, setLoading }) => {
   const [file, setFile] = useState(null);
   const [uploading, setUploading] = useState(false);
@@ -42,7 +44,7 @@ const handleUpload = async (e) => {
   formData.append('image', file);
 
   try {
-    const response = await axios.post('http://localhost:5000/api/upload', formData);
+    const response = await axios.post(`${API_URL}/api/upload`, formData);
     
     // IMPORTANT: Pass the new image data (response.data) to the success handler
     onUploadSuccess(response.data); 
